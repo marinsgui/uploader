@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { FaDownload, FaUpload } from 'react-icons/fa'
 import './App.css'
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
       <form>
         <h1>Faça upload de seus arquivos</h1>
         <label className='file-input'>
-          Selecione os arquivos
+          Selecione os arquivos <FaUpload />
           <input type="file" onChange={handleChange} multiple />
         </label>
       </form>
@@ -32,7 +33,13 @@ function App() {
           {files.map((file, index) => (
             <li key={index}>
               <p>{file.name}</p>
-              <button onClick={() => handleDownload(index)}>Download</button>
+              <button 
+                onClick={() => handleDownload(index)} 
+                className='download-btn'
+                title='Download'
+                >
+                <FaDownload />
+              </button>
             </li>
           ))}
         </ul>
