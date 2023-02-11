@@ -21,3 +21,26 @@ input[type='file'] {
   margin-top: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
+
+.file-input:hover {
+  background-color: #1010fe;
+  color: #fff;
+}
+
+.file-list {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.file-list li {
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.file-list li p {
+  font-weight: bold;
+}

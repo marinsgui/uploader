@@ -2,10 +2,8 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  
   const [files, setFiles] = useState([])
   
-
   function handleChange(e) {
     const selected = e.target.files[0]
     setFiles([...files, selected])
@@ -30,14 +28,14 @@ function App() {
           <input type="file" onChange={handleChange} multiple />
         </label>
       </form>
-      <div>
+      <ul className='file-list'>
           {files.map((file, index) => (
-            <div key={index}>
-              <div>{file.name}</div>
+            <li key={index}>
+              <p>{file.name}</p>
               <button onClick={() => handleDownload(index)}>Download</button>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
     </div>
   )
 }
