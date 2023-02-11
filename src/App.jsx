@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { FaDownload, FaUpload } from 'react-icons/fa'
+import { FaUpload } from 'react-icons/fa'
 import './App.css'
+import FileCard from './components/FileCard'
 
 function App() {
   const [files, setFiles] = useState([])
@@ -31,16 +32,12 @@ function App() {
       </form>
       <ul className='file-list'>
           {files.map((file, index) => (
-            <li key={index}>
-              <p>{file.name}</p>
-              <button 
-                onClick={() => handleDownload(index)} 
-                className='download-btn'
-                title='Download'
-                >
-                <FaDownload />
-              </button>
-            </li>
+            <FileCard 
+              file={file} 
+              index={index} 
+              key={index} 
+              handleDownload={handleDownload} 
+            />
           ))}
         </ul>
     </div>
