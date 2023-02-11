@@ -24,7 +24,11 @@ function App() {
   return (
     <div className="App">
       <form>
-        <input type="file" onChange={handleChange} />
+        <h1>Faça upload de seus arquivos</h1>
+        <label className='file-input'>
+          Selecione os arquivos
+          <input type="file" onChange={handleChange} multiple />
+        </label>
       </form>
       <div>
           {files.map((file, index) => (
